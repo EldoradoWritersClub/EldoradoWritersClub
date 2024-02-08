@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldorado Writers' Club - Works</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pinyon+Script|Petit+Formal+Script|Cormorant+Garamond">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <script src="./works.js"></script>
+    <script src="./works_page.js"></script>
+
+    <script src="../main.js">
+
+    </script>
+
+    <script>
+        window.addEventListener('load', function () {
+            AddNavBarFunc(".")
+        })
+    </script>
+
+    <div id="header">
+        <img id="logo_image" style="padding: 0;width: 48px;height: 48px;margin-right: 15px;margin-left: 7px;" src="../images/logo.png">
+        <h1>Eldorado High School Writers' Club</h1>
+    </div>
+    <div id="nav_bar">
+        <button id="home_button">Home</button>
+        <button id="writing_pieces_button">Works</button>
+    </div>
+
+	<div id="people_holder">
+	</div>
+
+    <div id="fade_works_list">
+        
+    </div>
+
+    <center id="page_center">
+        <div id="page_hider"></div>
+        <div id="page_display_hidden">
+        <button id="page_button_prev" onclick="PreviousPage()">&#60;</button>
+        <button id="page_button_next" onclick="NextPage()">></button>
+        
+        <div id="page_scroll_holder"><div class="page_fade_div"></div>            <iframe id="page_display_content" src="""></iframe>        </div>
+            <p id="page_number">1/1</p>
+
+            <button id="fullscreen_button" onclick="Fullscreen()">&#x26F6;</button>
+
+    </div>
+    </center>
+    <div id="work_holder"></div>
+</body>
+</html>
