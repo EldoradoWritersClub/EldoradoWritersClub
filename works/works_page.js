@@ -122,7 +122,7 @@ LoadWork = (person, index) => {
       if(Works[work].file.includes(person)){
          if(i == index)
          {
-            document.getElementById('page_display_content').innerHTML = Works[work].text;
+            document.getElementById('page_display_content_inner').innerHTML = Works[work].text;
             //Update page displays
             doc_CurrentPage = 1;
             doc_MaxPages = Works[work].page_count;
