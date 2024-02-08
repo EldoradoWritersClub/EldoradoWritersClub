@@ -1,0 +1,401 @@
+:root
+{
+    --bg-color: #B1CC96;
+	 --alt-bg: #A1BB85;
+    --text-color: #000000;
+    --hover-color: #c1c1c1;
+	--page-anim-duration: 0.4s;
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+@keyframes fadeup
+{
+	from {color: #B1CC9600;background-color: #B1CC9600;}
+	to {}
+}
+
+@keyframes logobounce
+{
+	from {transform: scale(0);}
+	to {}
+}
+
+#page_display, #fullscreen_page, #page_display_hidden
+{
+	background-color: white;
+	width: 92%;
+	height: 90%;
+	border: 3px solid white;
+	border-radius: 4px;
+
+	min-width: fit-content;
+	min-height: 850px;
+	max-width: 860px;
+	position: relative;
+	transition-duration: 0.625s;
+}
+
+#page_display_hidden
+{
+	transition-duration: 1.8s;
+	background-color: #FFFFFF00;
+	width: 0;
+	height: 0;
+}
+
+#fade_works_list, #works_list
+{
+	float: left;
+    z-index: 3;
+    position: absolute;
+
+	transition-duration: 0.8s;
+}
+
+#fade_works_list
+{
+	background-color: #FFFFFF00;
+	height: 0;
+	width: 0;
+	
+	z-index: 4;
+}
+
+#works_list
+{
+    background-color: #ffffff;
+    height: 855px;
+    width: 80%;
+
+	z-index: 4;
+}
+
+@keyframes page_out {
+	0%{}
+	100%{transform: translate(-800px, 0);}
+}
+
+
+@keyframes page_in {
+	0%{transform: translate(800px, 0);}
+	100%{}
+}
+
+@keyframes page_div_fade {
+	0%{background-color: #FFFFFF00;}
+	100%{transform: translate(0, 0);background-color: #FFFFFFFF;}
+}
+
+@keyframes page_div_fade_in {
+	0%{background-color: #FFFFFFFF;}
+	20%{background-color: #FFFFFFFF;}
+	100%{transform: translate(0, 0);background-color: #FFFFFF00;}
+}
+
+@keyframes page_div_fade_rev {
+	0%{background-color: #FFFFFF00;}
+	100%{transform: translate(0, 0);background-color: #FFFFFFFF;}
+}
+div > .fade_div_out
+{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 22px);
+	z-index: 1;
+	animation-name: page_div_fade;
+	animation-duration: var(--page-anim-duration);
+}
+
+div > .fade_div_in
+{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 22px);
+	z-index: 1;
+	animation-name: page_div_fade_in;
+	animation-duration: var(--page-anim-duration);
+}
+
+div > .fade_div_in_rev
+{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 22px);
+	z-index: 1;
+	animation-name: page_div_fade_in_rev;
+	animation-duration: var(--page-anim-duration);
+}
+
+.anim_page_next_out
+{
+	animation-name: page_out;
+	animation-duration: var(--page-anim-duration);
+	animation-timing-function: ease-out;
+
+}
+
+.anim_page_next_in
+{
+	animation-name: page_in;
+	animation-duration: var(--page-anim-duration);
+	animation-timing-function: ease-out;
+
+}
+
+.anim_page_next_out_rev
+{
+	animation-name: page_in;
+	animation-duration: var(--page-anim-duration);
+	animation-timing-function: ease-out;
+
+	animation-direction: reverse;
+}
+
+.anim_page_next_in_rev
+{
+	animation-name: page_out;
+	animation-duration: var(--page-anim-duration);
+	animation-timing-function: ease-out;
+
+	animation-direction: reverse;
+}
+
+#page_display_content
+{
+	overflow: hidden;
+	border: none;
+	height: 1000000%;
+	width: 100%;
+	position: relative;
+}
+
+#page_scroll_holder
+{
+	overflow: hidden;
+	width: 100%;
+	height: 800px;
+
+	border: 0px;
+}
+
+#logo_image
+{
+	animation-name: logobounce;
+	animation-duration: 0.8s;
+	animation-timing-function: jump-end;
+
+	transform: scale(1.8) translate(0, 8px);
+	
+	transition-duration: 0.25s;
+}
+
+#logo_image:hover
+{
+	transform: scale(2.15) translate(0, 7px);
+	
+	transition-duration: 0.25s;
+}
+
+#header > h1{
+    display: inline-block;
+}
+
+#header
+{
+	background-color: var(--alt-bg);
+	width: calc(100% + 16px);
+	margin-top: -8px;
+	margin-left: -8px;
+	
+	animation-name: fadeup;
+	animation-duration: 0.8s;
+
+    font-family: "Pinyon Script";
+}
+
+#nav_bar
+{
+	animation-name: fadeup;
+	animation-duration: 0.8s;
+	background-color: var(--alt-bg);
+	width: calc(100% + 16px);
+	margin-left: -8px;
+}
+
+#nav_bar > button
+{
+	animation-name: fadeup;
+	animation-duration: 0.8s;
+    height: 50px;
+    padding: 10px;
+
+    font-family: "Petit Formal Script";
+
+    outline: none;
+    background-color: #00000000;
+    border: none;
+	 
+    transition-duration: 0.3s;
+}
+
+#nav_bar > button:hover
+{
+    background-color: var(--hover-color);
+    transition-duration: 0.3s;
+}
+
+#page_button_next, #page_button_prev
+{
+	transition-duration: 0.3s;
+	position: absolute;
+	top: 0;
+    height: 100%;
+    z-index: 2;
+
+	border: none;
+
+	background-color: #e9e9e977;
+	border-radius: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	width: 4%;
+
+	max-width: 45px;
+}
+
+#page_center
+{
+	margin-top: 14px;
+}
+
+#page_button_next
+{
+    right: 0;
+}
+
+#page_button_prev
+{
+    left: 0;
+}
+
+#page_number
+{
+	position: relative;
+	z-index: 2;
+}
+
+#page_button_next:hover, #page_button_prev:hover
+{
+	background-color: #d3d1d1e7;
+}
+#page_button_next:active, #page_button_prev:active
+{
+	background-color: #c7c7c7e7;
+}
+
+#page_hider
+{
+	position: absolute;
+	width: 200%;
+	height: 100%;
+	background-color: var(--bg-color);
+	min-width: fit-content;
+	min-height: 856px;
+	max-width: 1000px;
+
+	margin-left: 5%;
+	z-index: 3;
+}
+
+#page_hider_vanish
+{
+	width: 0;
+	height: 0;
+	position: absolute;
+	background-color: #B1CC9600;
+	margin-left: 5%;
+	z-index: 3;
+}
+
+@keyframes load_up_work_list_button {
+	0%{color: #FFFFFF00; border-bottom: 0px solid #e2e2e2;background-color: #FFFFFF00;}
+	100%{}
+}
+
+.work_list_button
+{
+	font-family: "Cormorant Garamond";
+	font-size: 1em;
+
+	animation-name: load_up_work_list_button;
+	animation-duration: 0.6s;
+
+	width: 100%;
+    height: 5%;
+    background-color: #FFFFFF;
+    border: none;
+    border-bottom: 2px solid #e2e2e2;
+	color: black;
+
+	transition-duration: 0.4s;
+
+}
+
+.work_list_button:hover
+{
+	background-color: #cccbcb;
+}
+
+.work_list_button:active
+{
+	background-color: #e5e5e5;
+}
+
+.person_button
+{
+	height: 50px;
+	background-color: #00000000;
+	border: none;
+
+	font-family: "Cormorant Garamond";
+	font-size: 1em;
+	
+	border-right: 2px solid var(--alt-bg);
+
+	transition-duration: 0.3s;
+}
+
+.person_button:hover
+{
+	background-color: var(--alt-bg);
+}
+
+#people_holder
+{
+	width: calc(100% + 14px);
+	margin: 0;
+	margin-left: -7px;
+	background-color: #A9C393;
+	min-height: 50px;
+}
+
+.selected_person_button_menu
+{
+	background-color: var(--alt-bg);
+}
+
+.selected_person_button
+{
+	background-color: var(--hover-color);
+}
+
+#fullscreen_button
+{
+    position: absolute;
+    top: calc(100% - 37px);
+    left: calc(50% - 50px);
+	z-index: 3;
+}
