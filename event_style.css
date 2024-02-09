@@ -1,0 +1,115 @@
+:root
+{
+    --event-bg-color: #a8be90;
+    --event-text-color: #111;
+    --event-container-bg: #bbd4a2;
+}
+
+.content_square
+{
+    font-family: "Cormorant Garamond";
+    background-color: var(--event-container-bg);
+    padding: 7px;
+    margin-top: 10px;
+    border: 3px solid var(--event-bg-color);
+    border-radius: 10px;
+}
+
+#upcoming_events
+{
+    width: 50%;
+}
+
+#upcoming_events > h1, #current_prompt > h1
+{
+    margin-bottom: 0px;
+    border-bottom: 1px solid black;
+    margin-left: 7px;
+    margin-right: 11px;
+}
+
+@keyframes event_popin
+{
+    from {width: 0px; font-size: 0px;}
+    to {}
+}
+
+.event_incoming
+{
+    background-color: var(--event-bg-color);
+    color: var(--event-text-color);
+    font-family: "Cormorant Garamond";
+
+    width: calc(100% - 32px);
+
+    animation: event_popin 0.5s both;
+
+    margin: 7px;
+    padding: 7px;
+
+    transition-duration: 0.25s;
+    border: 0px solid #a7be8e;
+}
+
+.event_incoming:hover
+{
+    transform: scale(1.03, 1.03);
+    border: 2px solid #95aa7f;
+
+    transition-duration: 0.25s;
+}
+
+.event_incoming > h1
+{
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.event_incoming > em
+{
+    margin-left: 8px;
+    padding-top: 0px;
+    margin-top: -15px;
+}
+
+#current_prompt
+{
+    position: relative;
+    width: 33%;
+
+    left: calc(50% - 33% - 40px);
+    top: 0px; 
+
+    height: 200px;
+
+    animation-name: current_prompt_popin;
+    animation-duration: 0.5s;
+
+    transition-duration: 0.25s;
+}
+
+#current_prompt:hover
+{
+    transition-duration: 0.25s;
+}
+
+@keyframes current_prompt_popin
+{
+    from {color: #00000000; border: 0px solid #00000000;}
+    to {}
+}
+
+#current_prompt > h1
+{
+    animation-name: current_prompt_popin;
+    animation-duration: 0.5s;
+}
+
+#current_prompt > p
+{
+    margin: 7px;
+    font-size: 1.3em;
+
+    animation-name: current_prompt_popin;
+    animation-duration: 0.5s;
+}
