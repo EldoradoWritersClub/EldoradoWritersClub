@@ -18,7 +18,7 @@ class Event
 }
 
 const events = [
-    new Event("Writers' Digest", "Feb 4", "https://www.writersdigest.com/writers-digest-competitions/annual-writing-competition<br><br>If anyone is curious about submitting to competitions, here's a link to another. \"Early-Bird\" deadline is May 6th, so there's plenty of time!")
+    new Event("Writers' Digest", "Feb 4", "<a>https://www.writersdigest.com/writers-digest-competitions/annual-writing-competition</a><br><br>If anyone is curious about submitting to competitions, here's a link to another. \"Early-Bird\" deadline is May 6th, so there's plenty of time!")
 ]
 
 function LoadEvents()
